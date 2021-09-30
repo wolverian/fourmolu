@@ -296,6 +296,15 @@ printerOptsParser = do
             <> showAllValues @CommaStyle
             <> showDefaultValue poCommaStyle
       ]
+  poIECommaStyle <-
+    (optional . option parseBoundedEnum . mconcat)
+      [ long "ie-comma-style",
+        metavar "IESTYLE",
+        help $
+          "How to place commas in multi-line import and export lists: "
+            <> showAllValues @CommaStyle
+            <> showDefaultValue poIECommaStyle
+      ]
   poIndentWheres <-
     (optional . option parseBoundedEnum . mconcat)
       [ long "indent-wheres",
